@@ -17,6 +17,13 @@ namespace modul5_1302200020
         {
             Random random = new Random();
             this.id = random.Next(10000, 99999);
+            if (title == "")
+
+                throw new NullReferenceException(" Null is not allowed for tittle ");
+
+            if (title.Length > 200)
+
+                throw new Exception(" The maximum length of the text is 100 Characters ");
             this.title = title;
             this.playCount = 0;
 
@@ -24,6 +31,8 @@ namespace modul5_1302200020
 
         public void IncreasePlayCount(int n)
         {
+            if (n == -1 && n > 25000000)
+                throw new NullReferenceException(" Null is not allowed for tittle ");
             playCount = playCount + n;
         }
 

@@ -16,6 +16,12 @@ namespace modul5_1302200020
         {
             Random random = new Random();
             this.id = random.Next(10000, 99999);
+            if (username == "")
+
+                throw new NullReferenceException(" Null is not allowed for tittle ");
+            if (username.Length > 200)
+
+                throw new Exception(" The maximum length of the text is 100 Characters ");
             this.uploadedVideos = new List<SayaTubeVideo>();
             this.username = username;
         }
